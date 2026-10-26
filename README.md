@@ -23,7 +23,7 @@ OSU_CLIENT_SECRET=your_secret
 ```
 npm install -g vercel
 vercel login
-cd C:\Users\ilyesmisser\Documents\patternholic
+cd path\to\patternholic
 vercel
 vercel --prod
 ```
