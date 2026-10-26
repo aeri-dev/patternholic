@@ -1,25 +1,31 @@
 # Patternholic
 
-Vue 3 + Vite frontend, Cloudflare Worker + D1 backend. osu! beatmap search and pattern analysis.
+osu! beatmap search + pattern analysis (Pattern Abuse Score 0-100).
 
 ## Run locally (Windows)
 ```
 npm install
 npm run dev
 ```
-Worker dev: `npx wrangler dev`
+Open http://localhost:5173
 
-## Configure
-Copy `.env.example` values into Cloudflare secrets:
+## Configure osu! API (for search)
+1. Create app at https://osu.ppy.sh/home/account/edit#new-oauth-application
+2. Copy Client ID and Client Secret.
+3. Local: create `.env` with:
 ```
-npx wrangler secret put OSU_CLIENT_ID
-npx wrangler secret put OSU_CLIENT_SECRET
+OSU_CLIENT_ID=your_id
+OSU_CLIENT_SECRET=your_secret
 ```
+4. Vercel: Project → Settings → Environment Variables → add both.
 
-## Database
+## Deploy to Vercel
 ```
-npx wrangler d1 create patternholic-db
-npx wrangler d1 execute patternholic-db --local --file=migrations/0001_init.sql
+npm install -g vercel
+vercel login
+cd C:\Users\ilyesmisser\Documents\patternholic
+vercel
+vercel --prod
 ```
 
 ## Tests
@@ -28,9 +34,7 @@ npm test
 npm run build
 ```
 
-## Deploy
-```
-npm run build
-npx wrangler deploy
-```
-Free domain: `patternholic.<account>.workers.dev`
+## Notes
+- Analysis runs in browser/server by pasting `.osu` file content.
+- Rankings are in-memory on Vercel (not persistent). Use Cloudflare/D1 version for persistent DB.
+- Client-side routes handled by SPA fallback in vercel.json.
