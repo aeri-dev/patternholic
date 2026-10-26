@@ -1,40 +1,21 @@
 # Patternholic
 
-osu! beatmap search + pattern analysis (Pattern Abuse Score 0-100).
+Patternholic is a web app for the rhythm game osu! that helps users discover beatmaps and analyze rhythm patterns.
 
-## Run locally (Windows)
-```
-npm install
-npm run dev
-```
-Open http://localhost:5173
+## What it does
+- Search real osu! beatmaps via the official osu! API.
+- View beatmap and difficulty metadata.
+- Paste a `.osu` file to analyze its patterns.
+- Detect jumps, streams, bursts, repetition, density, timing intensity, and irregularity.
+- Calculate a transparent Pattern Abuse Score from 0 to 100.
+- View rankings of analyzed beatmaps.
+- Explain how each score was calculated.
 
-## Configure osu! API (for search)
-1. Create app at https://osu.ppy.sh/home/account/edit#new-oauth-application
-2. Copy Client ID and Client Secret.
-3. Local: create `.env` with:
-```
-OSU_CLIENT_ID=your_id
-OSU_CLIENT_SECRET=your_secret
-```
-4. Vercel: Project → Settings → Environment Variables → add both.
-
-## Deploy to Vercel
-```
-npm install -g vercel
-vercel login
-cd path\to\patternholic
-vercel
-vercel --prod
-```
-
-## Tests
-```
-npm test
-npm run build
-```
+## Tech stack
+- Frontend: Vue 3, TypeScript, Vite
+- Backend: Vercel serverless functions (TypeScript)
+- Database: in-memory on Vercel (Cloudflare D1 available in the Cloudflare version)
 
 ## Notes
-- Analysis runs in browser/server by pasting `.osu` file content.
-- Rankings are in-memory on Vercel (not persistent). Use Cloudflare/D1 version for persistent DB.
-- Client-side routes handled by SPA fallback in vercel.json.
+- The score is a heuristic, not an official osu! rating.
+- Search requires osu! API credentials configured as environment variables.
