@@ -70,13 +70,13 @@ function analyze(map) {
   for (let i = 1; i < objs.length; i++) intervals.push(objs[i].time - objs[i - 1].time);
   const meanInterval = intervals.length ? intervals.reduce((a, b) => a + b, 0) / intervals.length : 1000;
   const timingIntensity = Math.min(100, 1000 / Math.max(meanInterval, 1));
-  const sigs = new Map();
+  const sigs = {};
   for (let i = 0; i < objs.length - 1; i++) {
     const key = `${Math.round(objs[i + 1].x - objs[i].x)},${Math.round(objs[i + 1].y - objs[i].y)},${Math.round(objs[i + 1].time - objs[i].time)}`;
-    sigs.set(key, (sigs.get(key) || 0) + 1);
+    sigs[key] = (sigs[key] || 0) + 1;
   }
   let repeated = 0;
-  for (const v of sigs.values()) if (v > 1) repeated += v - 1;
+  for (const k in sigs) if (sigs[k] > 1) repeated += sigs[k] - 1;
   const repetitionScore = Math.min(100, (repeated / Math.max(objs.length, 1)) * 100);
   const mean = meanInterval;
   const variance = intervals.length ? intervals.reduce((a, b) => a + (b - mean) ** 2, 0) / intervals.length : 0;
