@@ -125,14 +125,14 @@ const steps = [
   {
     number: '02',
     icon: 'activity',
-    title: 'Unpack the pattern',
-    description: 'Add a .osu file to break down jumps, streams, bursts, and the rhythm in between.'
+    title: 'Explore every difficulty',
+    description: 'See star ratings, timing, and player-voted community tags in one place.'
   },
   {
     number: '03',
     icon: 'chart',
-    title: 'See the bigger picture',
-    description: 'Understand the score, explore the metrics, and compare analyzed beatmaps.'
+    title: 'A deeper breakdown, soon',
+    description: 'Pattern scores and rhythm timelines are in development. Your map’s workspace is ready.'
   },
 ] as const
 

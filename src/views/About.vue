@@ -4,8 +4,8 @@
       <p class="eyebrow">Behind the numbers</p>
       <h1 class="page-title">A closer look at every pattern.</h1>
       <p class="page-description">
-        Patternholic turns osu! beatmap data into a readable breakdown of rhythm,
-        movement, and repetition. Here is how it works.
+        Explore ranked osu!standard beatmaps and player-voted community tags.
+        Pattern analysis is in development; the methodology below describes the current prototype.
       </p>
     </header>
 
@@ -13,7 +13,7 @@
       <p class="eyebrow">The Pattern Abuse Score</p>
       <h2 id="score-heading" class="section-heading">Seven signals. One starting point.</h2>
       <p>
-        Each beatmap receives a score from 0 to 100, calculated from seven weighted
+        The prototype calculates a score from 0 to 100 using seven weighted
         pattern metrics. A higher score means these signals are more pronounced.
         It does not tell you whether a map is good, bad, or enjoyable to play.
       </p>
@@ -45,8 +45,8 @@
         jumps, streams, and bursts occur, so you can put the numbers in context.
       </p>
       <p>
-        Search for a beatmap, choose a difficulty, and paste its .osu file to run
-        an analysis. Results reflect the file you provide.
+        Search for a beatmap and choose a difficulty to explore its metadata and
+        community tags. The pattern workspace will display analysis once the analyzer is ready.
       </p>
       <RouterLink to="/search" class="text-link">
         Find a beatmap

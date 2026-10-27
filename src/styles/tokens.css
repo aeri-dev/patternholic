@@ -17,6 +17,7 @@
     --color-on-accent: #192519;
     --color-error: #efb0a8;
     --color-error-bg: #2b211f;
+    --difficulty-color: var(--color-accent);
 
     /* Type, spacing, and shape */
     --font-sans: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;

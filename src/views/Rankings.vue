@@ -88,9 +88,15 @@ async function loadRankings() {
   error.value = ''
   try {
     const response = await fetch('/api/rankings')
-    if (!response.ok) throw new Error('Rankings request failed')
+    if (!response.ok) {
+      error.value = 'We could not load the rankings. Please try again in a moment.'
+      return
+    }
     const data = await response.json()
-    if (!Array.isArray(data.items)) throw new Error('Invalid rankings response')
+    if (!Array.isArray(data.items)) {
+      error.value = 'We could not load the rankings. Please try again in a moment.'
+      return
+    }
     items.value = data.items
   } catch {
     error.value = 'We could not load the rankings. Please try again in a moment.'

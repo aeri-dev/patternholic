@@ -57,7 +57,7 @@
     padding-bottom: var(--space-4);
     border-bottom: 1px solid var(--color-border);
     font-size: 0.625rem;
-    font-family: var(--font-mono);
+    font-family: var(--font-mono), monospace;
     letter-spacing: 0.12em;
     text-transform: uppercase;
 }
@@ -88,7 +88,7 @@
 .hit-circle text {
     fill: var(--color-accent);
     stroke: none;
-    font-family: var(--font-mono);
+    font-family: var(--font-mono), monospace;
     font-size: 14px;
     text-anchor: middle;
     dominant-baseline: central;
@@ -234,7 +234,7 @@
 
 .step-heading > span {
     color: var(--color-subtle);
-    font-family: var(--font-mono);
+    font-family: var(--font-mono), monospace;
     font-size: 0.625rem;
 }
 
@@ -263,87 +263,10 @@
     height: 15px;
 }
 
-/* Search and beatmap detail */
-.search-results {
-    margin-top: var(--space-10);
-}
-
 .result-count {
     color: var(--color-muted);
-    font-family: var(--font-mono);
+    font-family: var(--font-mono), monospace;
     font-size: 0.75rem;
-}
-
-.result-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-6);
-    padding: var(--space-6) var(--space-4);
-    border-top: 1px solid var(--color-border);
-    transition: background var(--transition);
-}
-
-.result-card:last-child {
-    border-bottom: 1px solid var(--color-border);
-}
-
-.result-card:hover {
-    background: var(--color-surface);
-}
-
-.result-main {
-    min-width: 0;
-}
-
-.result-title {
-    margin-block: var(--space-1) var(--space-2);
-    font-size: 1.25rem;
-    overflow-wrap: anywhere;
-}
-
-.result-meta {
-    color: var(--color-muted);
-    font-size: 0.8125rem;
-    overflow-wrap: anywhere;
-}
-
-.result-action {
-    flex-shrink: 0;
-    min-height: 44px;
-}
-
-.page-header > .text-link {
-    margin-bottom: var(--space-6);
-}
-
-.detail-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: var(--space-5);
-}
-
-.detail-header h2 {
-    margin-bottom: var(--space-2);
-}
-
-.difficulty-list {
-    display: grid;
-    gap: var(--space-6);
-}
-
-.difficulty-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-4);
-    margin-bottom: var(--space-6);
-}
-
-.difficulty-header h3 {
-    overflow-wrap: anywhere;
 }
 
 /* Analysis and methodology */
@@ -370,7 +293,7 @@
 
 .score-scale {
     color: var(--color-muted);
-    font-family: var(--font-mono);
+    font-family: var(--font-mono), monospace;
     font-size: 0.8125rem;
     letter-spacing: 0;
     white-space: nowrap;
@@ -387,7 +310,7 @@
 .score-panel > .muted:last-child {
     padding-top: var(--space-4);
     border-top: 1px solid var(--color-border);
-    font-family: var(--font-mono);
+    font-family: var(--font-mono), monospace;
     font-size: 0.625rem;
 }
 
@@ -452,7 +375,7 @@
 }
 
 .event-row > .muted {
-    font-family: var(--font-mono);
+    font-family: var(--font-mono), monospace;
     font-size: 0.75rem;
 }
 
@@ -627,20 +550,6 @@
 
     .method-note .icon {
         margin-top: 2px;
-    }
-
-    .result-card {
-        align-items: flex-start;
-        gap: var(--space-4);
-        padding-inline: 0;
-    }
-
-    .result-title {
-        font-size: 1.0625rem;
-    }
-
-    .result-action {
-        font-size: 0.75rem;
     }
 
     .metric-grid {

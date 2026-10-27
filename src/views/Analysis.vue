@@ -135,7 +135,10 @@ onMounted(() => {
     const saved = sessionStorage.getItem('lastAnalysis')
     if (!saved) return
     const parsed: unknown = JSON.parse(saved)
-    if (!isAnalysis(parsed)) throw new Error('Invalid analysis')
+    if (!isAnalysis(parsed)) {
+      error.value = 'Your saved analysis could not be loaded. Please analyze a beatmap again.'
+      return
+    }
     result.value = parsed
   } catch {
     error.value = 'Your saved analysis could not be loaded. Please analyze a beatmap again.'
