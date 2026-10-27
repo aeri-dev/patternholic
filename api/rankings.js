@@ -1,1 +1,1 @@
-module.exports = (req,res)=>{ res.setHeader('Content-Type','application/json'); res.end(JSON.stringify({items:[]})); };
+export default = (req,res)=>{ res.setHeader('Content-Type','application/json'); res.end(JSON.stringify({items:[]})); };
